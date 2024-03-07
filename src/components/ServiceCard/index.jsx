@@ -1,9 +1,9 @@
 import React from 'react'
 
-const ServiceCard = ({ img, title, description, size }) => {
+const ServiceCard = ({ icon, title, description }) => {
     return (
-        <div className={[size && `col-lg-${size}`, 'service-card-container'].join(' ')}>
-            <img src={img} alt="" />
+        <div className={'service-card-container'}>
+            <img src={icon} alt="" />
             <h5>{title}</h5>
             <p>{description}</p>
         </div>

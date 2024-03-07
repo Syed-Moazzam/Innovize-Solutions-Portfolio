@@ -3,8 +3,10 @@ import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import { FaArrowRight } from 'react-icons/fa';
 import allImages from '../../constants/imagePath';
-import { servicesArr } from '../../config/data';
+import { chooseUsArr, servicesArr } from '../../config/data';
 import ServiceCard from '../../components/ServiceCard';
+import ChooseUsCard from '../../components/ChooseUsCard';
+import { Col, Row } from 'react-bootstrap';
 
 const Home = () => {
     return (
@@ -84,18 +86,45 @@ const Home = () => {
             <section id="services" className="services">
                 <div className="container">
                     <div className="row text-center">
-                        <h1 className="display-3 fw-bold class-white">Our Top - <span style={{ color: '#AD30EE' }}>Notch Development Services</span></h1>
+                        <h1 className="display-4 fw-bold class-white mb-3">Our Top - <span style={{ color: '#AD30EE' }}>Notch Development Services</span></h1>
                         <h4 className="fw-bold lead mb-3 class-white text-uppercase">One Stop Solution</h4>
                         <div className="heading-line mb-1"></div>
                     </div>
                 </div>
 
                 <div className="container">
-                    <div className="row justify-content-center gap-4 mt-4 mb-4">
-                        {servicesArr?.map((service) => {
-                            return <ServiceCard img={service?.serviceImg} title={service?.serviceTitle} description={service?.serviceDescription} size="5" />
+                    <Row className="justify-content-center mt-4 mb-4">
+                        {servicesArr?.map((service, index) => {
+                            return (
+                                <Col lg={4} style={{ marginBottom: '1.8rem' }}>
+                                    <ServiceCard key={index} icon={service?.icon} title={service?.title} description={service?.description} />
+                                </Col>
+                            )
                         })}
+                    </Row>
+                </div>
+            </section>
+
+            <section id="why-choose-us" className="why-choose-us">
+                <div className="container text-center">
+                    <div className="row align-items-center">
+                        <h4 className='fw-bold lead text-uppercase'>Why Choose Us?</h4>
+                        <h1 className='display-4 fw-bold position-relative mb-3'>Choose Innovize Solutions: <br />Your Journey to Exceptional Results</h1>
+                        <div className='col-lg-6 contents-of-why-choose-us position-relative'>At Innovize Solutions, We go beyond what's expected to provide unmatched solutions. Our dedication to innovation, excellence, and ensuring client satisfaction distinguishes us. Opt for a joint venture where your ideas blend with our proficiency, leading to revolutionary digital solutions that set new standards. With a team committed to innovation, we guarantee that your projects surpass industry benchmarks. Whether it's advanced technology or tailored assistance, Innovize Solutions is your reliable ally in attaining digital triumph. Embark on a path where your dreams align with our drive to create remarkable digital encounters.</div>
+                        <div className="col-lg-6">
+                            <img src={allImages?.whyChooseUsImg} alt="" className='why-choose-us-right-image' />
+                        </div>
                     </div>
+
+                    <Row className='mt-5'>
+                        {chooseUsArr?.map((item) => {
+                            return (
+                                <Col lg={4} style={{ marginBottom: '1.8rem' }}>
+                                    <ChooseUsCard icon={item?.icon} title={item?.title} description={item?.description} />
+                                </Col>
+                            )
+                        })}
+                    </Row>
                 </div>
             </section>
             <Footer />
