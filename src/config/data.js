@@ -65,3 +65,37 @@ export const chooseUsArr = [
         description: "Choose Innovize Solutions for a reliable partner that values timelines, communication, and a commitment to delivering solutions that exceed expectations."
     }
 ];
+
+export const accomplishmentsArr = [
+    {
+        numberVal: '3+',
+        title: 'Years of proven success in the industry',
+    },
+    {
+        numberVal: '100+',
+        title: 'Delivered Projects',
+    },
+    {
+        numberVal: '50+',
+        title: 'Skilled Professionals',
+    },
+];
+
+export const customAccordionArr = [
+    {
+        accordionHeader: 'How do we initiate a project with Innovize Solutions?',
+        accordionBody: "To start, reach out to us through our contact form or email. We'll schedule a consultation to discuss your project requirements and goals and outline the next steps in our collaboration.",
+    },
+    {
+        accordionHeader: 'What industries do Innovize Solutions specialize in?',
+        accordionBody: "We have expertise across various industries, including but not limited to delivery, education, social, healthcare, finance, e-commerce, and entertainment—our versatile team tailors solutions to match the unique needs of your industry.",
+    },
+    // {
+    //     accordionHeader: 'What is the typical duration of an app development project?',
+    //     accordionBody: "The timeline varies based on project complexity. A detailed project analysis allows us to provide accurate timelines. We prioritize efficiency without compromising quality, ensuring timely delivery.",
+    // },
+    // {
+    //     accordionHeader: 'How can I involved be in the development process?',
+    //     accordionBody: "We encourage client involvement! Throughout the process, we maintain open communication, providing regular updates and seeking your input. Your insights are invaluable in shaping the final product.",
+    // },
+];

@@ -3,10 +3,12 @@ import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import { FaArrowRight } from 'react-icons/fa';
 import allImages from '../../constants/imagePath';
-import { chooseUsArr, servicesArr } from '../../config/data';
+import { accomplishmentsArr, chooseUsArr, customAccordionArr, servicesArr } from '../../config/data';
 import ServiceCard from '../../components/ServiceCard';
 import ChooseUsCard from '../../components/ChooseUsCard';
 import { Col, Row } from 'react-bootstrap';
+import AccomplishmentCard from '../../components/AccomplishmentCard';
+import CustomAccordion from '../../components/CustomAccordion';
 
 const Home = () => {
     return (
@@ -96,8 +98,8 @@ const Home = () => {
                     <Row className="justify-content-center mt-4 mb-4">
                         {servicesArr?.map((service, index) => {
                             return (
-                                <Col lg={4} style={{ marginBottom: '1.8rem' }}>
-                                    <ServiceCard key={index} icon={service?.icon} title={service?.title} description={service?.description} />
+                                <Col lg={4} style={{ marginBottom: '1.8rem' }} key={index}>
+                                    <ServiceCard icon={service?.icon} title={service?.title} description={service?.description} />
                                 </Col>
                             )
                         })}
@@ -110,6 +112,7 @@ const Home = () => {
                     <div className="row align-items-center">
                         <h4 className='fw-bold lead text-uppercase'>Why Choose Us?</h4>
                         <h1 className='display-4 fw-bold position-relative mb-3'>Choose Innovize Solutions: <br />Your Journey to Exceptional Results</h1>
+                        <div className="heading-line"></div>
                         <div className='col-lg-6 contents-of-why-choose-us position-relative'>At Innovize Solutions, We go beyond what's expected to provide unmatched solutions. Our dedication to innovation, excellence, and ensuring client satisfaction distinguishes us. Opt for a joint venture where your ideas blend with our proficiency, leading to revolutionary digital solutions that set new standards. With a team committed to innovation, we guarantee that your projects surpass industry benchmarks. Whether it's advanced technology or tailored assistance, Innovize Solutions is your reliable ally in attaining digital triumph. Embark on a path where your dreams align with our drive to create remarkable digital encounters.</div>
                         <div className="col-lg-6">
                             <img src={allImages?.whyChooseUsImg} alt="" className='why-choose-us-right-image' />
@@ -117,10 +120,49 @@ const Home = () => {
                     </div>
 
                     <Row className='mt-5'>
-                        {chooseUsArr?.map((item) => {
+                        {chooseUsArr?.map((item, index) => {
                             return (
-                                <Col lg={4} style={{ marginBottom: '1.8rem' }}>
+                                <Col lg={4} style={{ marginBottom: '1.8rem' }} key={index}>
                                     <ChooseUsCard icon={item?.icon} title={item?.title} description={item?.description} />
+                                </Col>
+                            )
+                        })}
+                    </Row>
+                </div>
+            </section>
+
+            <section id="accomplishments" className="accomplishments">
+                <div className="container text-center">
+                    <h4 className='fw-bold lead text-uppercase'>Our Accomplishments In Numbers</h4>
+                    <h1 className='display-4 fw-bold position-relative mb-3'>By the Numbers, A Glimpse of Our Successful Journey <span style={{ color: '#AD30EE' }}>Through Completed Projects</span></h1>
+                    <div className="heading-line"></div>
+                    <p className='accomplishments-detail-paragraph'>Innovize Solutions takes immense pride in delivering innovative and high-quality mobile and web applications. Our portfolio displays the diverse range of projects we have completed for clients across various industries. Each project is a testament to our commitment to excellence, cutting-edge technology, and a passion for exceeding our clients' expectations. Our team of experienced developers, designers, and project managers brings expertise to every project.</p>
+
+                    <Row>
+                        {accomplishmentsArr?.map((accomplishment, index) => {
+                            return (
+                                <Col lg={4} style={{ marginBottom: '1.8rem' }} key={index}
+                                >
+                                    <AccomplishmentCard numberVal={accomplishment?.numberVal} title={accomplishment?.title} />
+                                </Col>
+                            )
+                        })}
+                    </Row>
+                </div>
+            </section>
+
+            <section id="faq" className="faq">
+                <div className="container">
+                    <div className="row text-center">
+                        <p className="fw-bold lead text-uppercase">Frequently Asked Questions, Get Knowledge Before Hand!</p>
+                        <h1 className="display-3 fw-bold text-uppercase mb-3">Faq<span style={{ textTransform: 'lowercase' }}>s</span></h1>
+                        <div className="heading-line"></div>
+                    </div>
+                    <Row className='mt-4'>
+                        {customAccordionArr?.map((accordion, index) => {
+                            return (
+                                <Col lg={12} key={index}>
+                                    <CustomAccordion header={accordion?.accordionHeader} body={accordion?.accordionBody} index={index} />
                                 </Col>
                             )
                         })}
